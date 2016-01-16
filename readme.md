@@ -2,4 +2,6 @@
 
 Just a basic implementation of a photo gallery.
 
-All demo images taken from https://pixabay.com/
+[View Demo](http://gordonez5.github.io/really-simple-gallery/)
+
+<small>All demo images taken from [pixabay.com](https://pixabay.com/)</small>
