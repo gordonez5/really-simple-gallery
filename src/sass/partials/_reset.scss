@@ -1,0 +1,34 @@
+// Basic reset
+
+html {
+	font-family: sans-serif;
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+
+body {
+	margin: 0;
+}
+
+
+nav {
+	display: block;
+}
+
+a {
+	background: transparent;
+
+	&:focus {
+		outline: thin dotted;
+	}
+
+	&:active,
+	&:hover {
+		outline: 0;
+	}
+}
+
+
+img {
+	border: 0;
+}

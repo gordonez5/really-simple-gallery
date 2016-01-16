@@ -1,0 +1,123 @@
+// @imports first
+@import 'partials/variables';
+@import 'partials/reset';
+@import 'partials/mixins';
+
+/****
+ *
+ * base styles
+ *
+ ****/
+
+html {
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+body {
+	background: $grey;
+	color: $black;
+}
+
+.wrap {
+	background-color: $white;
+	margin: 1em auto 0;
+	max-width: 720px;
+	padding: 1em;
+}
+
+h1 {
+	margin-top: 0;
+}
+
+/****
+ *
+ * gallery styles
+ *
+ ****/
+
+// hide main image if browser does not support JS
+.experience-core .gallery__frame {
+	display: none;
+}
+
+
+// thumbnails
+.gallery__list {
+	@include cf();
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.gallery__item {
+	background-color: $grey-lighter;
+	float: left;
+	padding: 2%;
+	position: relative;
+
+	// Stack thumbnails 2x2 on smaller devices
+	width: 50%;
+	transition: background-color 0.2s;
+	&:hover {
+		background-color: $grey-light;
+	}
+	&.active {
+		background-color: $brand;
+		&:hover {
+			background-color: $brand;
+			cursor: default;
+		}
+	}
+
+	@media ( min-width: 568px ) {
+
+		// fluid padding around thumbnails
+		padding: 1.5%;
+
+		// Disaplay thumbnails in a row
+		width: 25%;
+		&.active {
+			// Display pointer only when thubnails are in a row
+			&:after {
+				border-color: transparent;
+				border-bottom-color: #00989e;
+				border-style: solid;
+				border-width: 1em;
+				content: '';
+				margin-left: -1em;
+				position: absolute;
+				bottom: 100%;
+				left: 50%;
+			}
+		}
+	}
+
+}
+
+.gallery__thumb-link {
+	display: block;
+	font: 0/0 normal;
+	.active & {
+		cursor: default;
+	}
+	&:hover,
+	&:active {
+
+	}
+}
+
+.gallery__image,
+.gallery__thumb {
+	display: block;
+	height: auto;
+	max-width: 100%;
+}
+
+// progressively enhanced overrides
+.experience-enhanced {}
