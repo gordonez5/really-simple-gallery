@@ -1,0 +1,146 @@
+html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+nav {
+  display: block;
+}
+
+a {
+  background: transparent;
+}
+
+a:focus {
+  outline: thin dotted;
+}
+
+a:active, a:hover {
+  outline: 0;
+}
+
+img {
+  border: 0;
+}
+
+/****
+ *
+ * base styles
+ *
+ ****/
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  background: #555555;
+  color: #001819;
+}
+
+.wrap {
+  background-color: #ffffff;
+  margin: 1em auto 0;
+  max-width: 720px;
+  padding: 1em;
+}
+
+h1 {
+  margin-top: 0;
+}
+
+/****
+ *
+ * gallery styles
+ *
+ ****/
+.experience-core .gallery__frame {
+  display: none;
+}
+
+.gallery__list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.gallery__list {
+  *zoom: 1;
+}
+
+.gallery__list:before, .gallery__list:after {
+  content: '';
+  display: table;
+}
+
+.gallery__list:after {
+  clear: both;
+}
+
+.gallery__item {
+  background-color: #cccccc;
+  float: left;
+  padding: 2%;
+  position: relative;
+  width: 50%;
+  transition: background-color 0.2s;
+}
+
+.gallery__item:hover {
+  background-color: #888888;
+}
+
+.gallery__item.active {
+  background-color: #00989e;
+}
+
+.gallery__item.active:hover {
+  background-color: #00989e;
+  cursor: default;
+}
+
+@media (min-width: 568px) {
+  .gallery__item {
+    padding: 1.5%;
+    width: 25%;
+  }
+  .gallery__item.active:after {
+    border-color: transparent;
+    border-bottom-color: #00989e;
+    border-style: solid;
+    border-width: 1em;
+    content: '';
+    margin-left: -1em;
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+  }
+}
+
+.gallery__thumb-link {
+  display: block;
+  font: 0/0 normal;
+}
+
+.active .gallery__thumb-link {
+  cursor: default;
+}
+
+.gallery__image,
+.gallery__thumb {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+/*# sourceMappingURL=../maps/styles.css.map */
