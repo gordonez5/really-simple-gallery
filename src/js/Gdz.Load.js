@@ -1,15 +1,5 @@
-Gdz.Load = {
+$(window).load(function() {
 
-	init: function () {
+	// To run after the page has fully loaded
 
-		'use strict';
-
-		console.log( 'starting Gdz.Load.init' );
-
-		// Gdz.Global.consoleCheck();
-		// Gdz.Nav.init();
-		// Gdz.Cookies.noCookieMessage( '.main-footer' );
-		// Gdz.Scroll.init();
-	}
-
-};
+});

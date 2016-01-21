@@ -3,6 +3,8 @@ Gdz.ReallySimpleGallery = {
 
 	init: function() {
 
+		'use strict';
+
 		// Set up variables
 		var $gallery = $( '#gallery' ),
 			$frame = $( '#gallery-frame' ),
@@ -18,6 +20,8 @@ Gdz.ReallySimpleGallery = {
 	},
 
 	changeImage: function( anchors, frame ) {
+
+		'use strict';
 
 		anchors.on( 'click', function( e ) {
 
@@ -51,18 +55,14 @@ Gdz.ReallySimpleGallery = {
 	}
 
 };
-Gdz.Load = {
+Gdz.Scripts = {
 
-	init: function () {
+	run: function () {
 
 		'use strict';
 
-		console.log( 'starting Gdz.Load.init' );
+		Gdz.ReallySimpleGallery.init();
 
-		// Gdz.Global.consoleCheck();
-		// Gdz.Nav.init();
-		// Gdz.Cookies.noCookieMessage( '.main-footer' );
-		// Gdz.Scroll.init();
 	}
 
 };
@@ -70,10 +70,12 @@ Gdz.Load = {
 // document ready
 $(document).ready(function() {
 
-	Gdz.ReallySimpleGallery.init();
+	Gdz.Scripts.run();
 
 });
 
-
 $(window).load(function() {
+
+	// To run after the page has fully loaded
+
 });

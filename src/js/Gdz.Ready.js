@@ -1,10 +1,6 @@
 // document ready
 $(document).ready(function() {
 
-	Gdz.ReallySimpleGallery.init();
+	Gdz.Scripts.run();
 
-});
-
-
-$(window).load(function() {
 });
