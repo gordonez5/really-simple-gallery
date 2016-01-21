@@ -14,9 +14,18 @@ var uglify = require('gulp-uglify');
 
 var scriptInput = [
 	'./src/js/Gdz.Base.js',
-	'./src/js/modules/*.js',
-	'./src/js/Gdz.Load.js',
-	'./src/js/Gdz.Ready.js'
+	'./src/js/modules/Gdz.ReallySimpleGallery.js',
+	'./src/js/Gdz.Scripts.js',
+	'./src/js/Gdz.Ready.js',
+	'./src/js/Gdz.Load.js'
+];
+
+var scriptInputVanilla = [
+	'./src/js/Gdz.Base.js',
+	'./src/js/modules/Gdz.ReallySimpleGallery.vanilla.js',
+	'./src/js/Gdz.Scripts.js',
+	'./src/js/Gdz.Ready.js',
+	'./src/js/Gdz.Load.js'
 ];
 
 var sassInput = [
@@ -59,6 +68,19 @@ gulp.task('scripts', function() {
 		.pipe(gulp.dest( scriptOutput ));
 });
 
+// scripts task
+gulp.task('scripts-vanilla', function() {
+	return gulp
+		.src( scriptInputVanilla )
+		.pipe(concat('app-vanilla.js'))
+		.pipe(gulp.dest( scriptOutput ))
+		.pipe(uglify().on('error', function(e) { console.log('\x07',e.message); return this.end(); }))
+		.pipe(rename({
+			suffix: '.min'
+		}))
+		.pipe(gulp.dest( scriptOutput ));
+});
+
 // dev styles task - unminified
 gulp.task('styles-dev', function() {
 	return gulp
@@ -89,11 +111,11 @@ gulp.task('watch', function() {
 	gulp.watch([
 		'./src/js/*.js',
 		'./src/js/**/*.js'
-	], ['scripts']);
+	], ['scripts', 'scripts-vanilla']);
 	gulp.watch([
 		'./src/sass/*.scss',
 		'./src/sass/**/*.scss'
 	], ['styles-dev']);
 });
 
-gulp.task('default', ['scripts', 'styles-dev', 'styles-prod', 'watch']);
+gulp.task('default', ['scripts', 'styles-dev', 'scripts-vanilla', 'styles-prod', 'watch']);
