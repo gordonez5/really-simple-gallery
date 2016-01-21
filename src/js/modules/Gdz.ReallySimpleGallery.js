@@ -2,6 +2,8 @@ Gdz.ReallySimpleGallery = {
 
 	init: function() {
 
+		'use strict';
+
 		// Set up variables
 		var $gallery = $( '#gallery' ),
 			$frame = $( '#gallery-frame' ),
@@ -17,6 +19,8 @@ Gdz.ReallySimpleGallery = {
 	},
 
 	changeImage: function( anchors, frame ) {
+
+		'use strict';
 
 		anchors.on( 'click', function( e ) {
 
