@@ -1,3 +1,4 @@
+var Gdz = Gdz || {};
 Gdz.Scripts = {
 
 	run: function () {
@@ -39,3 +40,16 @@ Gdz.Scripts = {
 	}
 
 };
+
+// document ready
+$(document).ready(function() {
+
+	Gdz.Scripts.run();
+
+});
+
+$(window).load(function() {
+
+	// To run after the page has fully loaded
+
+});
