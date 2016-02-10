@@ -15,6 +15,7 @@ var uglify = require('gulp-uglify');
 var scriptInput = [
 	'./src/js/Gdz.Base.js',
 	'./src/js/modules/Gdz.ReallySimpleGallery.js',
+	'./src/js/modules/Gdz.MultiGallery.js',
 	'./src/js/Gdz.Scripts.js',
 	'./src/js/Gdz.Ready.js',
 	'./src/js/Gdz.Load.js'
@@ -22,7 +23,7 @@ var scriptInput = [
 
 var scriptInputVanilla = [
 	'./src/js/Gdz.Base.js',
-	'./src/js/modules/Gdz.ReallySimpleGallery.vanilla.js',
+	// './src/js/modules/Gdz.ReallySimpleGallery.vanilla.js',
 	'./src/js/Gdz.Scripts.js',
 	'./src/js/Gdz.Ready.js',
 	'./src/js/Gdz.Load.js'
@@ -115,7 +116,7 @@ gulp.task('watch', function() {
 	gulp.watch([
 		'./src/sass/*.scss',
 		'./src/sass/**/*.scss'
-	], ['styles-dev']);
+	], ['styles-dev', 'styles-prod']);
 });
 
 gulp.task('default', ['scripts', 'styles-dev', 'scripts-vanilla', 'styles-prod', 'watch']);

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" class="experience-core">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Really Simple Gallery (multiple galleries)</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="./dist/css/styles.min.css">
+	<link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+	<script>
+		// Cutting the mustard
+		(function(document, window) {
+			var cutsTheMustard = ('querySelector' in document && 'localStorage' in window && 'addEventListener' in window);
+
+			if (cutsTheMustard) {
+				document.documentElement.className = document.documentElement.className.replace(/\bexperience-core\b/g, 'experience-enhanced');
+			}
+		})(document, window);
+	</script>
+</head>
+<body class="classical">
+
+	<div class="wrap">
+
+		<h1>Really Simple Gallery (multiple galleries)</h2>
+		<h2>Cats vs. Dogs</h2>
+
+		<div id="cat-gallery" class="gallery">
+
+			<div class="gallery__frame">
+				<img class="gallery__image" src="./images/cat1.jpg" alt="A photo of a cat" title="A photo of a cat">
+			</div>
+
+			<nav id="gallery__nav">
+
+				<ul class="gallery__list">
+
+					<li class="gallery__item">
+						<a href="./images/cat1.jpg" class="gallery__thumb-link">
+							<img class="gallery__thumb" src="./images/cat1-thumb.jpg" alt="A photo of a cat" title="A photo of a cat">
+						</a>
+					</li>
+
+					<li class="gallery__item">
+						<a href="./images/cat2.jpg" class="gallery__thumb-link">
+							<img class="gallery__thumb" src="./images/cat2-thumb.jpg" alt="Another photo of a cat" title="Another photo of a cat">
+						</a>
+					</li>
+
+					<li class="gallery__item">
+						<a href="./images/cat3.jpg" class="gallery__thumb-link">
+							<img class="gallery__thumb" src="./images/cat3-thumb.jpg" alt="A third photo of a cat" title="A third photo of a cat">
+						</a>
+					</li>
+
+					<li class="gallery__item">
+						<a href="./images/cat4.jpg" class="gallery__thumb-link">
+							<img class="gallery__thumb" src="./images/cat4-thumb.jpg" alt="A final photo of a cat" title="A final photo of a cat">
+						</a>
+					</li>
+
+				</ul>
+
+			</nav>
+
+		</div>
+
+		<div id="dog-gallery" class="gallery">
+
+			<div class="gallery__frame">
+				<img class="gallery__image" src="./images/dog1.jpg" alt="A photo of a dog" title="A photo of a dog">
+			</div>
+
+			<nav id="gallery__nav">
+
+				<ul class="gallery__list">
+
+					<li class="gallery__item">
+						<a href="./images/dog1.jpg" class="gallery__thumb-link">
+							<img class="gallery__thumb" src="./images/dog1-thumb.jpg" alt="A photo of a dog" title="A photo of a dog">
+						</a>
+					</li>
+
+					<li class="gallery__item">
+						<a href="./images/dog2.jpg" class="gallery__thumb-link">
+							<img class="gallery__thumb" src="./images/dog2-thumb.jpg" alt="Another photo of a dog" title="Another photo of a dog">
+						</a>
+					</li>
+
+					<li class="gallery__item">
+						<a href="./images/dog3.jpg" class="gallery__thumb-link">
+							<img class="gallery__thumb" src="./images/dog3-thumb.jpg" alt="A third photo of a dog" title="A third photo of a dog">
+						</a>
+					</li>
+
+					<li class="gallery__item">
+						<a href="./images/dog4.jpg" class="gallery__thumb-link">
+							<img class="gallery__thumb" src="./images/dog4-thumb.jpg" alt="A final photo of a dog" title="A final photo of a dog">
+						</a>
+					</li>
+
+				</ul>
+
+			</nav>
+
+		</div>
+
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="./dist/js/app.min.js"></script>
+</body>
+</html>
